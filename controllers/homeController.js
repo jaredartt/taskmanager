@@ -1,6 +1,22 @@
-// controllers/homeController.js
-function displayHome(req, res) {
-  res.send('Name: Ruben Martinez');
-}
+const JaredRoute = (req, res) => {
+  res.send('Name: Jared');
+};
 
-module.exports = { displayHome };
+const RubenRoute = (req, res) => {
+  res.send('Name: Ruben');
+};
+
+const PedroRoute = (req, res) => {
+  res.send('Name: Pedro');
+};
+
+const normalRoute = (req, res) => {
+  res.send('Home page');
+};
+
+module.exports = {
+  JaredRoute,
+  RubenRoute,
+  PedroRoute,
+  normalRoute,
+};
