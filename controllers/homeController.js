@@ -1,6 +1,6 @@
 // controllers/homeController.js
 function displayHome(req, res) {
-  res.send('Name: Jared Martinez');
+  res.send('Name: Ruben Martinez');
 }
 
 module.exports = { displayHome };
