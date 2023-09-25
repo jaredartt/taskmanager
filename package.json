@@ -2,7 +2,7 @@
   "name": "cse341-node",
   "version": "1.0.0",
   "description": "cse341-node",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
