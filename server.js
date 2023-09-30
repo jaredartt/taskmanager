@@ -5,7 +5,6 @@ const mongodb = require('./db/contacts');
 const port = 3000;
 const app = express();
 
-
 app
   .use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
   .use(bodyParser.json()) // for parsing application/json

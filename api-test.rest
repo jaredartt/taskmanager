@@ -1,0 +1,24 @@
+### Create a New Contact
+POST http://localhost:3000/contacts
+Content-Type: application/json
+
+{
+  "firstName": "askdjkasdlkajslkd",
+  "lastName": "askdjkasdlkajslkd",
+  "email": "askdjkasdlkajslkd@example.com",
+  "favoriteColor": "askdjkasdlkajslkd",
+  "birthday": "02/02/2823"
+}
+
+### Update an existing contact by ID
+PUT http://localhost:3000/contacts/:id
+Content-Type: application/json
+
+{
+  "firstName": "SpongeBob",
+  "lastName": "SquarePants",
+  "email": "spongebobsquarepants@example.com"
+}
+
+### Delete an existing contact by ID
+DELETE http://localhost:3000/contacts/6517d554baf3c7b820009fc7
