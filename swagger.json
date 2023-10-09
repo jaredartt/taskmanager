@@ -1,0 +1,144 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "My API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/api-docs": {
+        "get": {
+            "description": "Get Swagger API documentation",
+            "responses": {
+                "200": {
+                    "description": "Successful response"
+                }
+            }
+        }
+    },
+    "/contacts/{contactId}": {
+      "get": {
+        "description": "Get a contact by ID",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "description": "ID of the contact to retrieve",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "description": "Update an existing contact by ID",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "description": "ID of the contact to update",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "contact",
+            "in": "body",
+            "description": "Updated contact data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "favoriteColor": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "Contact updated"
+          }
+        }
+      },
+      "delete": {
+        "description": "Delete a contact by ID",
+        "parameters": [
+          {
+            "name": "contactId",
+            "in": "path",
+            "description": "ID of the contact to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Contact deleted"
+          }
+        }
+      }
+    },
+    "/contacts": {
+      "get": {
+        "description": "Get all contacts",
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "post": {
+        "description": "Create a new contact",
+        "parameters": [
+          {
+            "name": "contact",
+            "in": "body",
+            "description": "Contact to create",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "favoriteColor": {
+                  "type": "string"
+                },
+                "birthday": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Contact created"
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,15 +3,15 @@ POST http://localhost:3000/contacts
 Content-Type: application/json
 
 {
-  "firstName": "askdjkasdlkajslkd",
-  "lastName": "askdjkasdlkajslkd",
-  "email": "askdjkasdlkajslkd@example.com",
-  "favoriteColor": "askdjkasdlkajslkd",
-  "birthday": "02/02/2823"
+  "firstName": "Patrick",
+  "lastName": "Star",
+  "email": "patrickstar@example.com",
+  "favoriteColor": "pink",
+  "birthday": "01/01/2001"
 }
 
 ### Update an existing contact by ID
-PUT http://localhost:3000/contacts/:id
+PUT http://localhost:3000/contacts/65187081bd70f4457da2b6f6
 Content-Type: application/json
 
 {
@@ -21,4 +21,4 @@ Content-Type: application/json
 }
 
 ### Delete an existing contact by ID
-DELETE http://localhost:3000/contacts/6517d554baf3c7b820009fc7
+DELETE http://localhost:3000/contacts/65187081bd70f4457da2b6f6
