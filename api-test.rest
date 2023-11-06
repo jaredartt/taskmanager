@@ -1,24 +1,24 @@
-### Create a New Contact
-POST http://localhost:3000/contacts
+### Create a new task
+POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-  "firstName": "Patrick",
-  "lastName": "Star",
-  "email": "patrickstar@example.com",
-  "favoriteColor": "pink",
-  "birthday": "01/01/2001"
+  "name": "Wash dishes",
+  "desc": "Clean the dishes in the sink",
+  "dueDate": "10/11/2023",
+  "isCompleted": "true",
+  "tags": "housework,chores,home"
 }
 
-### Update an existing contact by ID
-PUT http://localhost:3000/contacts/65187081bd70f4457da2b6f6
+### Update an existing task by ID
+PUT http://localhost:3000/tasks/65187081bd70f4457da2b6f6
 Content-Type: application/json
 
 {
-  "firstName": "SpongeBob",
-  "lastName": "SquarePants",
-  "email": "spongebobsquarepants@example.com"
+  "name": "Wash dishes",
+  "desc": "Clean the dishes in the sink",
+  "dueDate": "10/11/2023",
 }
 
-### Delete an existing contact by ID
-DELETE http://localhost:3000/contacts/65187081bd70f4457da2b6f6
+### Delete an existing task by ID
+DELETE http://localhost:3000/tasks/65187081bd70f4457da2b6f6

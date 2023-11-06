@@ -15,14 +15,14 @@
             }
         }
     },
-    "/contacts/{contactId}": {
+    "/tasks/{taskId}": {
       "get": {
-        "description": "Get a contact by ID",
+        "description": "Get a task by ID",
         "parameters": [
           {
-            "name": "contactId",
+            "name": "taskId",
             "in": "path",
-            "description": "ID of the contact to retrieve",
+            "description": "ID of the task to retrieve",
             "required": true,
             "type": "string"
           }
@@ -34,36 +34,36 @@
         }
       },
       "put": {
-        "description": "Update an existing contact by ID",
+        "description": "Update an existing task by ID",
         "parameters": [
           {
-            "name": "contactId",
+            "name": "taskId",
             "in": "path",
-            "description": "ID of the contact to update",
+            "description": "ID of the task to update",
             "required": true,
             "type": "string"
           },
           {
-            "name": "contact",
+            "name": "task",
             "in": "body",
-            "description": "Updated contact data",
+            "description": "Updated task data",
             "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "type": "string"
                 },
-                "lastName": {
+                "desc": {
                   "type": "string"
                 },
-                "email": {
+                "dueDate": {
                   "type": "string"
                 },
-                "favoriteColor": {
-                  "type": "string"
+                "isCompleted": {
+                  "type": "boolean"
                 },
-                "birthday": {
+                "tags": {
                   "type": "string"
                 }
               }
@@ -72,31 +72,31 @@
         ],
         "responses": {
           "204": {
-            "description": "Contact updated"
+            "description": "Task updated"
           }
         }
       },
       "delete": {
-        "description": "Delete a contact by ID",
+        "description": "Delete a task by ID",
         "parameters": [
           {
-            "name": "contactId",
+            "name": "taskId",
             "in": "path",
-            "description": "ID of the contact to delete",
+            "description": "ID of the task to delete",
             "required": true,
             "type": "string"
           }
         ],
         "responses": {
           "200": {
-            "description": "Contact deleted"
+            "description": "Task deleted"
           }
         }
       }
     },
-    "/contacts": {
+    "/tasks": {
       "get": {
-        "description": "Get all contacts",
+        "description": "Get all tasks",
         "responses": {
           "200": {
             "description": "Successful response"
@@ -104,29 +104,29 @@
         }
       },
       "post": {
-        "description": "Create a new contact",
+        "description": "Create a new task",
         "parameters": [
           {
-            "name": "contact",
+            "name": "task",
             "in": "body",
-            "description": "Contact to create",
+            "description": "Task to create",
             "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "firstName": {
+                "name": {
                   "type": "string"
                 },
-                "lastName": {
+                "desc": {
                   "type": "string"
                 },
-                "email": {
+                "dueDate": {
                   "type": "string"
                 },
-                "favoriteColor": {
-                  "type": "string"
+                "isCompleted": {
+                  "type": "boolean"
                 },
-                "birthday": {
+                "tags": {
                   "type": "string"
                 }
               }
@@ -135,7 +135,7 @@
         ],
         "responses": {
           "201": {
-            "description": "Contact created"
+            "description": "Task created"
           }
         }
       }

@@ -1,0 +1,23 @@
+{
+    "task": {
+        "name": "Paint",
+        "desc": "Let's paint a beautiful artwork",
+        "dueDate": "1/1/2023",
+        "isCompleted": "true",
+        "tags": "art,creativity"
+    },
+    "task2": {
+        "name": "Workout",
+        "desc": "Do some exercise in the gym",
+        "dueDate": "2/2/2023",
+        "isCompleted": "false",
+        "tags": "sport,exercise"
+    },
+    "task3": {
+        "name": "Water plants",
+        "desc": "The flowers look a bit dry today",
+        "dueDate": "3/3/2023",
+        "isCompleted": "false",
+        "tags": "housework,plants"
+    }
+}
