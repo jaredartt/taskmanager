@@ -1,6 +1,6 @@
 const { MongoClient, ObjectId } = require('mongodb');
 
-// Function to connect to the database
+// Function to connect to the database.
 async function connectToDatabase() {
   try {
     const uri = process.env.MONGODB_URI;
