@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const taskController = require('../controllers/tasks');
 const { createTask } = require('../controllers/tasks'); // Import the createTask function
+const validateTask = require('../util/validation');
 
 // GET all tasks
 router.get(['/all', '/'], async (req, res) => {
@@ -17,6 +18,7 @@ router.get(['/all', '/'], async (req, res) => {
 // GET a single task by ID
 router.get('/:id', async (req, res) => {
   const taskId = req.params.id;
+
   try {
     const task = await taskController.getTaskById(taskId);
     if (!task) {
@@ -28,6 +30,7 @@ router.get('/:id', async (req, res) => {
     console.error(error);
     res.status(500).send('Internal Server Error');
   }
+
 });
 
 
@@ -36,6 +39,14 @@ router.get('/:id', async (req, res) => {
 // POST route to create a new task
 router.post("/", async (req, res) => {
   try {
+
+    // Validate the updated task data
+    const { error } = validateTask(req.body);
+
+    if (error) {
+      return res.status(400).json({ error: error.message }); // Use error.message to get the customized message
+    }
+
     const newTaskData = req.body; // Get the new task data from the request body
 
     // Call the createTask function to create the new task
@@ -55,6 +66,14 @@ router.post("/", async (req, res) => {
 router.put('/:id', async (req, res) => {
   const taskId = req.params.id;
   try {
+    
+    // Validate the updated task data
+    const { error } = validateTask(req.body);
+
+    if (error) {
+      return res.status(400).json({ error: error.message }); // Use error.message to get the customized message
+    }
+
     // Extract updated task data from req.body
     const updatedTaskData = req.body;
 
