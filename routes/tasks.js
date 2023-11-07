@@ -48,6 +48,7 @@ router.post("/", async (req, res) => {
     }
 
     const newTaskData = req.body; // Get the new task data from the request body
+    newTaskData.tags = req.body.tags.split(',').map(tag => tag.trim()); // Split and clean tags
 
     // Call the createTask function to create the new task
     const createdTask = await createTask(newTaskData);
@@ -79,7 +80,7 @@ router.put('/:id', async (req, res) => {
 
     // Split the comma-separated tags into an array
     if (updatedTaskData.tags) {
-      updatedTaskData.tags = updatedTaskData.tags.split(',');
+      updatedTaskData.tags = updatedTaskData.tags.split(',').map(tag => tag.trim());
     }
 
     // Assuming you have a function like updateTaskById in your controller
