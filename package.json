@@ -20,9 +20,11 @@
   },
   "homepage": "https://github.com/jaredartt/cse341-node#readme",
   "dependencies": {
+    "@google-cloud/local-auth": "^2.1.0",
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "googleapis": "^105.0.0",
     "joi": "^17.11.0",
     "mongodb": "^6.1.0",
     "nodemon": "^3.0.1",

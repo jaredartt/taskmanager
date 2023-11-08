@@ -40,7 +40,7 @@ router.get('/:id', async (req, res) => {
 router.post("/", async (req, res) => {
   try {
 
-    // Validate the updated task data
+    // Validate the new task data
     const { error } = validateTask(req.body);
 
     if (error) {
