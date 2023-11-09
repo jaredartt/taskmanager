@@ -65,6 +65,12 @@ button:hover {
     opacity: 75%;
 }
 
+hr {
+    width: 100%;
+    opacity: 30%;
+    margin: 2rem 0;
+}
+
 
 /* Header */
 
@@ -123,10 +129,45 @@ footer p {
 
 /* Other classes */
 
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px var(--shadow);
+}
+
+.box-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem;
+}
+
 .normal-btn {
     background-color: var(--blue);
 }
 
 .success-btn {
     background-color: var(--green);
+}
+
+.login-btn {
+    background-color: var(--white);
+    box-shadow: 0 0 10px var(--shadow);
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    background-color: var(--shadow);
+}
+
+.google-logo {
+    width: 2rem;
 }
