@@ -24,6 +24,7 @@ app
     resave: false, // Don't save session if unmodified
     saveUninitialized: false, // Don't create a session until something is stored
   }))
+  .use('/', require('./routes/index'))
   .use(passport.initialize())
   .use(passport.session())
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
