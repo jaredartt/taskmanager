@@ -6,7 +6,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: 'http://localhost:3000',
+  baseURL: 'https://cse341-node-mn7d.onrender.com/', //it was http://localhost:3000 before
   clientID: 'rG52XpwIORiMu6XRkPQiT4KEDsKyiyFw',
   issuerBaseURL: 'https://dev-lz1fcwznq7vwnrwd.us.auth0.com'
 };
