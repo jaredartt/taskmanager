@@ -5,7 +5,7 @@
     "description": "Let's get your work done!",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "https://cse341-node-mn7d.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"

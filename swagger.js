@@ -5,7 +5,7 @@ const doc = {
     title: 'Task Manager API',
     description: "Let's get your work done!"
   },
-  host: 'localhost:3000'
+  host: 'https://cse341-node-mn7d.onrender.com'
 };
 
 const outputFile = './swagger-output.json';
