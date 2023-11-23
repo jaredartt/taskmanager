@@ -1,18 +1,28 @@
 const express = require('express');
 const router = express.Router();
+const { auth, requiresAuth } = require('express-openid-connect');
 
-router.use('/tasks', require('./tasks'));
+const config = {
+  authRequired: false,
+  auth0Logout: true,
+  secret: 'a long, randomly-generated string stored in env',
+  baseURL: 'http://localhost:3000',
+  clientID: 'rG52XpwIORiMu6XRkPQiT4KEDsKyiyFw',
+  issuerBaseURL: 'https://dev-lz1fcwznq7vwnrwd.us.auth0.com'
+};
 
-// @desc   Login/Landing page
-// @route  GET /
+// auth router attaches /login, /logout, and /callback routes to the baseURL
+router.use(auth(config));
+
+// req.isAuthenticated is provided from the auth router
 router.get('/', (req, res) => {
-    res.render('Login')
-})
+  res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
+});
 
-// @desc   Dashboard
-// @route  GET /dashboard
-router.get('/dashboard', (req, res) => {
-    res.render('Dashboard')
-})
+router.get('/profile', requiresAuth(), (req, res) => {
+  res.send(JSON.stringify(req.oidc.user));
+});
+
+router.use('/tasks', requiresAuth(), require('./tasks'));
 
 module.exports = router;

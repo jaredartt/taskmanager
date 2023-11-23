@@ -5,7 +5,7 @@ const { createTask } = require('../controllers/tasks'); // Import the createTask
 const validateTask = require('../util/validation');
 
 // GET all tasks
-router.get(['/all', '/'], async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const tasks = await taskController.getAllTasks();
     res.json(tasks);
