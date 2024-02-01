@@ -2,7 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const { connectDB } = require('./config/db');
 
-// load config
+// Load config
 dotenv.config({ path: './config/config.env' });
 
 const swaggerUi = require('swagger-ui-express');
