@@ -6,7 +6,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: process.env.BASE_URL, //it was http://localhost:3000 before
+  baseURL: 'https://taskmanager-cega.onrender.com', //it was http://localhost:3000 before
   clientID: 'rG52XpwIORiMu6XRkPQiT4KEDsKyiyFw',
   issuerBaseURL: 'https://dev-lz1fcwznq7vwnrwd.us.auth0.com'
 };
