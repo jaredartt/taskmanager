@@ -5,7 +5,7 @@
     "description": "Let's get your work done!",
     "version": "1.0.0"
   },
-  "host": "cse341-node-mn7d.onrender.com",
+  "host": "taskmanager-cega.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
