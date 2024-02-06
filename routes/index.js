@@ -5,10 +5,10 @@ const { auth, requiresAuth } = require('express-openid-connect');
 const config = {
   authRequired: false,
   auth0Logout: true,
-  secret: process.env.GOOGLE_CLIENT_SECRET,
+  secret: process.env.SECRET,
   baseURL: process.env.BASE_URL, //it was http://localhost:3000 before
-  clientID: process.env.GOOGLE_CLIENT_ID, // 'rG52XpwIORiMu6XRkPQiT4KEDsKyiyFw',
-  issuerBaseURL: 'https://dev-lz1fcwznq7vwnrwd.us.auth0.com'
+  clientID: process.env.CLIENT_ID, // 'rG52XpwIORiMu6XRkPQiT4KEDsKyiyFw',
+  issuerBaseURL: process.env.ISSUER_BASE_URL //https://dev-lz1fcwznq7vwnrwd.us.auth0.com
 };
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
