@@ -31,25 +31,3 @@ app
 app.listen(PORT, () => {
   console.log(`Server is at http://localhost:${PORT}`);
 });
-
-// Connect to MongoDB and start the server
-// mongodb.initDb((err, mongodb) => {
-//   if (err) {
-//     console.log(err);
-//   } else {
-//     app.listen(port);
-//     console.log(`Connected to DB and listening on port ${port}`);
-//   }
-// });
-
-// mongoose.connect('mongodb://localhost:27017/taskmanager', {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// })
-//   .then(() => {
-//     app.listen(port);
-//     console.log(`Connected to DB and listening on port ${port}`);
-//   })
-//   .catch(error => {
-//     console.error('Error connecting to MongoDB:', error.message);
-//   });

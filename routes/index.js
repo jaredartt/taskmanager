@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { auth, requiresAuth } = require('express-openid-connect');
 
+// SXFGW1UZHKRA5EXXRVD496TM
+
 const config = {
   authRequired: false,
   auth0Logout: true,
@@ -18,6 +20,7 @@ router.use(auth(config));
 router.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
+
 
 router.get('/profile', requiresAuth(), (req, res) => {
   res.send(JSON.stringify(req.oidc.user));
